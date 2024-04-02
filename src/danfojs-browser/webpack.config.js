@@ -42,7 +42,7 @@ const createConfig = () => {
     ],
     target: "web",
     output: {
-      env: codeEngineEnvironment,
+      environment: codeEngineEnvironment,
       path: path.resolve(__dirname, "lib"),
       filename: "bundle.js",
       library: "dfd"
