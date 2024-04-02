@@ -59,6 +59,7 @@ const createConfig = () => {
           use: {
             loader: 'babel-loader',
             options: {
+              presets: ["@babel/preset-env", { targets: "ie 11" }],
               plugins: [
                 "@babel/plugin-transform-arrow-functions"
               ]
