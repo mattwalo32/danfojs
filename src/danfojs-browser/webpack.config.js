@@ -40,7 +40,7 @@ const createConfig = () => {
         // Blob: ["blob-polyfill", "Blob"],
       }),
     ],
-    target: ["web", "es5"],
+    target: ["web", "es5", "ie 11"],
     output: {
       environment: codeEngineEnvironment,
       path: path.resolve(__dirname, "lib"),
@@ -59,7 +59,7 @@ const createConfig = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ["@babel/preset-env", { targets: "ie 11" }],
+              presets: ["@babel/preset-env"],
               plugins: [
                 "@babel/plugin-transform-arrow-functions"
               ]
