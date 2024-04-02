@@ -1,16 +1,47 @@
 /* eslint-disable no-undef */
 const path = require("path");
 
+const codeEngineEnvironment = {
+  // The environment supports arrow functions ('() => { ... }').
+  arrowFunction: false,
+  // The environment supports BigInt as literal (123n).
+  bigIntLiteral: false,
+  // The environment supports const and let for variable declarations.
+  const: false,
+  // The environment supports destructuring ('{ a, b } = obj').
+  destructuring: false,
+  // The environment supports an async import() function to import EcmaScript modules.
+  dynamicImport: false,
+  // The environment supports 'for of' iteration ('for (const x of array) { ... }').
+  forOf: false,
+  // The environment supports ECMAScript Module syntax to import ECMAScript modules (import ... from '...').
+  module: false,
+};
+
 const createConfig = () => {
   return {
     mode: "production",
     devtool: "source-map",
     context: path.resolve(__dirname),
     entry: {
-      index: `./src/index.ts`
+      index: [
+        path.resolve(__dirname, "polyfills/env.js"),
+        "@babel/polyfill",
+        `./src/index.ts`
+      ]
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+        window: path.resolve(__dirname, "polyfills/window.js"),
+        process: path.resolve(__dirname, "polyfills/process.js"),
+        setImmediate: path.resolve(__dirname, "polyfills/setImmediate.js"),
+        Buffer: ["buffer", "Buffer"],
+        // Blob: ["blob-polyfill", "Blob"],
+      }),
+    ],
     target: "web",
     output: {
+      env: codeEngineEnvironment,
       path: path.resolve(__dirname, "lib"),
       filename: "bundle.js",
       library: "dfd"
