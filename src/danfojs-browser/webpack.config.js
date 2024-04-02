@@ -64,6 +64,9 @@ const createConfig = () => {
               plugins: [
 		 //"@babel/plugin-proposal-dynamic-import",
     		"@babel/plugin-transform-modules-commonjs",
+    		"@babel/plugin-transform-class-properties",
+    		"@babel/plugin-transform-class-static-block",
+    		"@babel/plugin-transform-classes",
                 "@babel/plugin-transform-arrow-functions",
                 "@babel/plugin-transform-unicode-sets-regex",
                 ["@babel/plugin-transform-unicode-property-regex",
