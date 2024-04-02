@@ -53,6 +53,17 @@ const createConfig = () => {
           test: /\.tsx?$/,
           use: [ 'ts-loader', 'ify-loader' ],
           exclude: /node_modules/
+        },
+        {
+          test: /\.m?js$/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                "@babel/plugin-transform-arrow-functions"
+              ]
+            }
+          }
         }
       ]
     },
