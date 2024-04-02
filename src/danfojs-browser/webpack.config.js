@@ -40,7 +40,7 @@ const createConfig = () => {
         // Blob: ["blob-polyfill", "Blob"],
       }),
     ],
-    target: ["web", "es5", "ie 11"],
+    target: ["web", "es2015"],
     output: {
       environment: codeEngineEnvironment,
       path: path.resolve(__dirname, "lib"),
