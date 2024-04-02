@@ -40,7 +40,7 @@ const createConfig = () => {
         // Blob: ["blob-polyfill", "Blob"],
       }),
     ],
-    target: ["web", "es2015"],
+    target: ["web", "es5"],
     output: {
       environment: codeEngineEnvironment,
       path: path.resolve(__dirname, "lib"),
@@ -56,12 +56,29 @@ const createConfig = () => {
         },
         {
           test: /\.m?js$/,
+	  exclude: /core-js/,
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ["@babel/preset-env"],
+              //presets: ["es2015"],
               plugins: [
-                "@babel/plugin-transform-arrow-functions"
+		 //"@babel/plugin-proposal-dynamic-import",
+    		"@babel/plugin-transform-modules-commonjs",
+                "@babel/plugin-transform-arrow-functions",
+                "@babel/plugin-transform-unicode-sets-regex",
+                ["@babel/plugin-transform-unicode-property-regex",
+			{
+				useUnicodeFlag: false
+			}
+		],
+                "@babel/plugin-transform-dotall-regex",
+                ["@babel/plugin-transform-named-capturing-groups-regex",
+			{
+				runtime: false
+			}
+		],
+                "@babel/plugin-transform-sticky-regex",
+                "@babel/plugin-transform-unicode-regex"
               ]
             }
           }
