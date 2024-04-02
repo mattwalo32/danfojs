@@ -457,6 +457,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
+"@babel/plugin-syntax-bigint@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-bigint/-/plugin-syntax-bigint-7.8.3.tgz#4c9a6f669f5d0cdf1b90a1671e9a146be5300cea"
+  integrity sha512-wnTnFlG+YxQm3vDxpGE57Pj0srRU4sHE/mDkt1qv2YJJSeUAec2ma4WLUnUPeKjyrfntVwe/N6dCXpU+zL3Npg==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.0"
+
 "@babel/plugin-syntax-class-properties@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.12.13.tgz#b5c987274c4a3a82b89714796931a6b53544ae10"
@@ -719,6 +726,13 @@
     "@babel/helper-function-name" "^7.23.0"
     "@babel/helper-plugin-utils" "^7.24.0"
 
+"@babel/plugin-transform-instanceof@^7.24.1":
+  version "7.24.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-instanceof/-/plugin-transform-instanceof-7.24.1.tgz#bc75eb7976ecd927aac6c2c34f5ec094597f7e95"
+  integrity sha512-WgRFadetnie6/gtCk8BY/ifTxjpht/fE/a2jM4Stm+H9HOyEhZ4WgSO4KHrYIFR3CgmuTs8NxSr+iD+us/rWDw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.24.0"
+
 "@babel/plugin-transform-json-strings@^7.24.1":
   version "7.24.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-json-strings/-/plugin-transform-json-strings-7.24.1.tgz#08e6369b62ab3e8a7b61089151b161180c8299f7"
@@ -879,6 +893,13 @@
   version "7.24.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.24.1.tgz#d6a9aeab96f03749f4eebeb0b6ea8e90ec958825"
   integrity sha512-LetvD7CrHmEx0G442gOomRr66d7q8HzzGGr4PMHGr+5YIm6++Yke+jxj246rpvsbyhJwCLxcTn6zW1P1BSenqA==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.24.0"
+
+"@babel/plugin-transform-property-mutators@^7.24.1":
+  version "7.24.1"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-property-mutators/-/plugin-transform-property-mutators-7.24.1.tgz#a335790d2a085b299b099bef72cbd74ec38c55ea"
+  integrity sha512-Ymxx/zzhEZF6b5agHgTGuQVQdWWSqJbCoAh4qz30Y9P+afBbW9eEYAwki+7oM8qlS5GZDQ8F0hGj55EcOpOGAw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.24.0"
 
