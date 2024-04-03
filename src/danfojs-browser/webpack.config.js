@@ -47,6 +47,9 @@ const createConfig = () => {
       filename: "bundle.js",
       library: "dfd"
     },
+    optimize: {
+      minimize: false,
+    },
     module: {
       rules: [
         {
@@ -87,7 +90,7 @@ const createConfig = () => {
     		"@babel/plugin-transform-async-generator-functions",
     		"@babel/plugin-transform-object-rest-spread",
 
-    		"@babel/plugin-transform-async-to-generator",
+    		// "@babel/plugin-transform-async-to-generator",
     		"@babel/plugin-transform-exponentiation-operator",
 
     		"@babel/plugin-transform-classes",
