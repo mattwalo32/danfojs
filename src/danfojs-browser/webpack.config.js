@@ -26,19 +26,19 @@ const createConfig = () => {
     context: path.resolve(__dirname),
     entry: {
       index: [
-        path.resolve(__dirname, "polyfills/env.js"),
+        // path.resolve(__dirname, "polyfills/env.js"),
         "@babel/polyfill",
         `./src/index.ts`
       ]
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        window: path.resolve(__dirname, "polyfills/window.js"),
-        process: path.resolve(__dirname, "polyfills/process.js"),
-        setImmediate: path.resolve(__dirname, "polyfills/setImmediate.js"),
-        Buffer: ["buffer", "Buffer"],
-        // Blob: ["blob-polyfill", "Blob"],
-      }),
+      // new webpack.ProvidePlugin({
+      //   window: path.resolve(__dirname, "polyfills/window.js"),
+      //   process: path.resolve(__dirname, "polyfills/process.js"),
+      //   setImmediate: path.resolve(__dirname, "polyfills/setImmediate.js"),
+      //   Buffer: ["buffer", "Buffer"],
+      //   // Blob: ["blob-polyfill", "Blob"],
+      // }),
     ],
     target: ["web", "es5"],
     output: {
@@ -59,7 +59,7 @@ const createConfig = () => {
         },
         {
           test: /\.m?js$/,
-	        exclude: /core-js/,
+	        // exclude: /core-js/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -100,7 +100,7 @@ const createConfig = () => {
                 "@babel/plugin-transform-object-rest-spread",
                 ["@babel/plugin-transform-unicode-property-regex", { useUnicodeFlag: false }],
                 "@babel/plugin-transform-dotall-regex",
-                ["@babel/plugin-transform-named-capturing-groups-regex", { runtime: false }],
+                ["@babel/plugin-transform-named-capturing-groups-regex", { runtime: true }],
 
                 // ES 2017
     		        "@babel/plugin-transform-async-to-generator",
