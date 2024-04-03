@@ -47,7 +47,7 @@ const createConfig = () => {
       filename: "bundle.js",
       library: "dfd"
     },
-    optimize: {
+    optimization: {
       minimize: false,
     },
     module: {
